@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="freqList">
+        <item >Normal (200ms)</item>
+        <item >UI (60ms)</item>
+        <item >Game (20ms)</item>
+        <item >Fastest (0ms)</item>
+    </string-array>
+    <string-array name="freqListValues">
+        <item >1</item>
+        <item >2</item>
+        <item >3</item>
+        <item >4</item>
+    </string-array>
+    
+</resources>

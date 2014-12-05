@@ -1,0 +1,47 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="net.infidea.contextmon"
+    android:versionCode="3"
+    android:versionName="1.2" >
+
+    <uses-sdk
+        android:minSdkVersion="12"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BATTERY_STATS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@android:style/Theme.Light.NoTitleBar" >
+        <activity
+            android:name="net.infidea.contextmonitoringplatform.MainActivity"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="net.infidea.contextmonitoringplatform.setting.SettingActivity" >
+        </activity>
+        <activity android:name="net.infidea.contextmonitoringplatform.AboutActivity" >
+        </activity>
+
+        <service android:name="net.infidea.contextmonitoringplatform.monitor.ContextMonitor" >
+            <intent-filter>
+                <action android:name="kr.co.smartylab.cma5.ContextMonitor" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="net.infidea.contextmonitoringplatform.provider.ContextProvider"
+            android:authorities="kr.co.smartylab.cma5" >
+        </provider>
+    </application>
+
+</manifest>

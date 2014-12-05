@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory android:title="@string/title_sensing_setting" >
+        <PreferenceScreen
+            android:summary="@string/context_list_setting_sum"
+            android:title="@string/context_list_setting" >
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:disableDependentsState="true"
+                android:key="contextTypeAll"
+                android:title="@string/context_setting_monitor_all" />
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:dependency="contextTypeAll"
+                android:key="contextType100"
+                android:title="@string/context_location" />
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:dependency="contextTypeAll"
+                android:key="contextType1"
+                android:title="@string/context_acceleration" />
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:dependency="contextTypeAll"
+                android:key="contextType2"
+                android:title="@string/context_magnetic_field" />
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:dependency="contextTypeAll"
+                android:key="contextType3"
+                android:title="@string/context_orientation" />
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:dependency="contextTypeAll"
+                android:key="contextType4"
+                android:title="@string/context_gyroscope" />
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:dependency="contextTypeAll"
+                android:key="contextType5"
+                android:title="@string/context_light" />
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:dependency="contextTypeAll"
+                android:key="contextType6"
+                android:title="@string/context_pressure" />
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:dependency="contextTypeAll"
+                android:key="contextType7"
+                android:title="@string/context_temperature" />
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:dependency="contextTypeAll"
+                android:key="contextType8"
+                android:title="@string/context_proximity" />
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:dependency="contextTypeAll"
+                android:disableDependentsState="true"
+                android:key="contextType9"
+                android:title="@string/context_gravity" />
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:dependency="contextTypeAll"
+                android:disableDependentsState="true"
+                android:key="contextType10"
+                android:title="@string/context_linear_acceleration" />
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:dependency="contextTypeAll"
+                android:disableDependentsState="true"
+                android:key="contextType11"
+                android:title="@string/context_rotation_vector" />
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:dependency="contextTypeAll"
+                android:disableDependentsState="true"
+                android:key="contextType12"
+                android:title="@string/context_relative_humidity" />
+            <CheckBoxPreference
+                android:defaultValue="false"
+                android:dependency="contextTypeAll"
+                android:disableDependentsState="true"
+                android:key="contextType13"
+                android:title="@string/context_ambient_temperature" />
+        </PreferenceScreen>
+
+        <EditTextPreference
+            android:defaultValue="0"
+            android:dialogTitle="@string/sensing_duration_dialog"
+            android:key="sensingDuration"
+            android:summary="@string/sensing_duration_setting_sum"
+            android:title="@string/sensing_duration_setting" />
+
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/freqList"
+            android:entryValues="@array/freqListValues"
+            android:key="freq"
+            android:title="@string/setting_freq" />
+        <CheckBoxPreference android:key="adaptiveOn" android:title="@string/setting_adapive" android:defaultValue="false"/>
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/setting_management" >
+        <ListPreference
+            android:defaultValue="2"
+            android:entries="@array/approachList"
+            android:entryValues="@array/approachListValues"
+            android:key="approach"
+            android:summary="@string/setting_management_approach_sum"
+            android:title="@string/setting_management_approach" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/transmission_setting" >
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="transferOn"
+            android:title="@string/transfer_on_setting" />
+
+        <EditTextPreference
+            android:dependency="transferOn"
+            android:dialogTitle="@string/server_address_setting_dialog"
+            android:key="serverAddress"
+            android:summary="@string/server_address_setting_sum"
+            android:title="@string/server_address_setting" />
+        <EditTextPreference
+            android:defaultValue="0.5"
+            android:dependency="transferOn"
+            android:dialogTitle="@string/transfer_period_dialog"
+            android:key="transferPeriod"
+            android:summary="@string/transfer_period_setting_sum"
+            android:title="@string/transfer_period_setting" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
